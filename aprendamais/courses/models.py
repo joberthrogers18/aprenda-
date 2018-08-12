@@ -24,6 +24,7 @@ class Course(models.Model):
 
     image = models.FileField(
         upload_to='courses/images',
+        default='courses/imagens/default.jpg',
         verbose_name = 'Imagem',
         null = True,
         blank=True
