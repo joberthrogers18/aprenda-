@@ -1,5 +1,5 @@
 {% extends 'base.html'%}
-
+{% load static %}
 {% block content %}
 
     <div class="container">
@@ -12,9 +12,29 @@
             <div class="row">
                 <div class="col">
                     {% for course in course_list %}
-                        <div class="border">
-                            <a href="#">{{ course.name }}</a>
-                            <img src="{{ course.image.url }}" alt="{{course.image}}">
+                        <div class="border pl-2">
+                            <div class="row">
+                                <div class="col-4 mt-1 mb-1">
+                                    <img width="300px" height="200px" 
+                                        {% if course.image %}
+                                            src="{{ course.image.url }}"
+                                        {% else %}
+                                            src="{% static "courses/imagens/default.jpg" %}"
+                                        {% endif %} >
+                                </div>
+                                <div class="col-8">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="#" class="font-weight-bold">{{ course.name }}</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>Descrição: {{ course.description}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
