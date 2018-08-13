@@ -11,8 +11,13 @@ class Course(models.Model):
         'Atalho'
     )
 
+    about = models.TextField(
+        'Sobre o curso',
+        blank= True
+    )
+
     description = models.TextField(
-        'Descrição',
+        'Descrição do curso',
         blank=True
     )
 
