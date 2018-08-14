@@ -25,7 +25,7 @@
                                 <div class="col-8">
                                     <div class="row">
                                         <div class="col">
-                                            <a href="#" class="font-weight-bold">{{ course.name }}</a>
+                                            <a href="{% url 'courses:detail_course' course.slug %}" class="font-weight-bold">{{ course.name }}</a>
                                         </div>
                                     </div>
                                     <div class="row">
