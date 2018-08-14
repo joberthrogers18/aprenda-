@@ -17,6 +17,8 @@ class CourseCreateView(CreateView):
         'description',
         'image',
     ]
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
 
     success_url = reverse_lazy(
         viewname = 'courses:index',
@@ -25,4 +27,4 @@ class CourseCreateView(CreateView):
 class CourseDetailView(DetailView):
     model = Course
     template_name = 'courses/course_detail.html'
-    slug_field = 'slug'
+    

@@ -1,1 +1,50 @@
 {% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+
+<div class="alert alert-secondary" role="alert">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-3 font-weight-bold text-justify">{{ course.name }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2 style="word-wrap: break-word;">
+                {{ course.description }}
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-3">
+            <button class="btn btn-dark">Inscreva-se</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <h4 class="font-weight-bold">Sobre o curso</h4>
+                    <hr align="left" width="9%" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-justify">{{ course.about | linebreaks }}</div>
+            </div>
+        </div>
+        <div class="col">
+            <img width="300px" height="200px" 
+            {% if course.image %}
+                src="{{ course.image.url }}"
+            {% else %}
+                src="{% static "courses/imagens/default.jpg" %}"
+            {% endif %} >
+        </div>
+    </div>
+</div>
+
+{% endblock %}
