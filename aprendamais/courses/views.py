@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic import CreateView
 from django.views.generic import DetailView
+from django.views.generic import FormView
 from .models import Course
 from django.urls import reverse_lazy
+from .forms import ContactCourse
 
 class CourseListView(ListView):
     model = Course
@@ -24,7 +26,23 @@ class CourseCreateView(CreateView):
         viewname = 'courses:index',
     )
 
-class CourseDetailView(DetailView):
+class CourseDetailView(DetailView, FormView):
     model = Course
     template_name = 'courses/course_detail.html'
+    form_class = ContactCourse
+
+    success_url = reverse_lazy(
+        viewname = 'courses:index',
+    )
+
+    def get_context_data(self, **kwargs):
+        context = super(CourseDetailView, self).get_context_data(**kwargs)
+        context['form'] = ContactCourse
+        return context
+
+    
+class CourseForm(FormView):
+    success_url = reverse_lazy(
+        viewname = 'courses:index',
+    )
     
