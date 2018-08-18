@@ -41,8 +41,4 @@ class CourseDetailView(DetailView, FormView):
         return context
 
     
-class CourseForm(FormView):
-    success_url = reverse_lazy(
-        viewname = 'courses:index',
-    )
     
