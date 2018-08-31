@@ -1,0 +1,98 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+
+<!-- templates/registration/login.html
+<h2>Login</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form> -->
+
+<style media="screen">
+body, html {
+        background: url("aprendamais/accounts/templates/img/clock.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
+
+    .wrapper {
+        margin-top: 250px;
+        margin-bottom: 70px;
+    }
+
+    .form-signin {
+        max-width: 700px;
+        background-color: #455A64;
+        background: rgba(239,234,236, 0.7);
+        /* just in case there no content*/
+        padding: 20px 25px 30px;
+        margin: 20px auto 25px;
+        margin-top: 70px;
+        margin-bottom: 50px;
+        /* shadows and rounded borders */
+        -moz-border-radius: 1px;
+        -webkit-border-radius: 1px;
+        border-radius: 5px 5px 5px 5px;
+        -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 8px 4px 8px 4px rgba(0,0,0,0.2);
+    }
+
+    .form-signin-heading {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        margin-bottom: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    input[type="password"] {
+        margin-bottom: 60px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+</style>
+
+<div class="container">
+    <div class="wrapper">
+        <form class="form-signin" method="post">
+            {% csrf_token %}
+            <h3 class="form-signin-heading">
+                <b style="color:#000000 !important">Plataforma de Ensino à distância</b>
+            </h3>
+            {% if form.non_field_errors %}
+                <div div class="alert alert-danger">
+                  {% for error in form.non_field_errors %}
+                      <strong>{{ error|escape }}</strong>
+                  {% endfor %}
+                </div>
+            {% endif %}
+            <input type="text" class="form-control" id="id_username" name="username" placeholder="Usuário" required="" autofocus="" /><br />
+            <input type="password" class="form-control" id="password1" name="password" placeholder="Senha" required="" />
+
+
+            <button class="btn btn-lg btn-dark btn-block" name="Submit" value="Login" type="submit">Entrar</button>
+
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'aprendamais.core',
     'aprendamais.courses',
+    'aprendamais.accounts',
+    
 ]
 
 MIDDLEWARE = [
