@@ -1,0 +1,34 @@
+body, html{
+    background: url("../../img/clock.jpg");
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .form-signin {
+    background-color: #eee;
+      max-width: 600px;
+      padding: 25px;
+      margin: 100px auto;
+  }
+
+  .form-signin .form-signin-heading,
+  .form-signin #password1 {
+    margin-bottom: 25px;
+  }
+
+  .form-signin .form-control{
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+
+  .form-login .form-control:focus{
+    z-index: 2;
+  }
