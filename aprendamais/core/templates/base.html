@@ -23,29 +23,33 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                                <a class="nav-link" href="{% url 'core:home' %}">Início<span class="sr-only">(current)</span></a>
+                                <a class="nav-link action" href="{% url 'core:home' %}">Início<span class="sr-only">(current)</span></a>
                         </li>
                     <li class="nav-item">
-                        <a href="{% url 'courses:index' %}" class="nav-link">Cursos</a>
+                        <a href="{% url 'courses:index' %}" class="nav-link action">Cursos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'core:contact' %}" class="nav-link">Contato</a>
+                        <a href="{% url 'core:contact' %}" class="nav-link action">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link action">Entrar</a>
                     </li>
                 </ul>
         </div>
     </nav>
 
-    {% block content %}{% endblock %}
+    <div class="main">
+      {% block content %}{% endblock %}
+    </div>
 
-    <br><br><br><br><br>
-
-    <footer class="page-footer font-small navbar-dark bg-dark mt-5">
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3" style="color: antiquewhite">© 2018 Copyright:
-              <p>Aprenda+ - Uma simples plataforma de ensino a distância</a>
-            </div>
-            <!-- Copyright -->
-    </footer>
 </div>
+
+<footer class="page-footer font-small navbar-dark bg-dark">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center" style="color: antiquewhite">© 2018 Copyright:
+          <p>Aprenda+ - Uma simples plataforma de ensino a distância</a>
+        </div>
+        <!-- Copyright -->
+</footer>
 </body>
 </html>
