@@ -35,14 +35,18 @@ class Course(models.Model):
     )
 
     created_at = models.DateTimeField(
-        'Criado em', 
+        'Criado em',
         auto_now_add=True
     )
 
     updated_at = models.DateTimeField(
-        'Atualizado em', 
+        'Atualizado em',
         auto_now=True
     )
+
+    def save(self, *args, **kwargs):
+        self.slug = self.name.replace(" ","")
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
