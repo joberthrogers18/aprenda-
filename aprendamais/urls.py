@@ -21,6 +21,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('aprendamais.core.urls')),
+    path('conta/', include('aprendamais.accounts.urls')),
     path('conta/', include('django.contrib.auth.urls')),
     path('cursos/',include('aprendamais.courses.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
